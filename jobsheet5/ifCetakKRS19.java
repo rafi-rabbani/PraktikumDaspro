@@ -13,5 +13,6 @@ public class ifCetakKRS19 {
         } else {
             System.out.println("Registrasi ditolak. Silakan lunasi UKT terlebih dahulu");
         }
+        sc.close();
     }
 }

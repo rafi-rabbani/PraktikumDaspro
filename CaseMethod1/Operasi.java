@@ -1,23 +1,6 @@
 package CaseMethod1;
-import java.util.*;
 
 public class Operasi {
-    public static int ValidasiNilai(String nama, Scanner input) {
-        int nilai = 0;
-
-        while (true) {
-            System.out.printf("Nilai %s\t: ", nama);
-            nilai = input.nextInt();
-
-            if (nilai >= 0 && nilai <= 100) {
-                break;
-            } else {
-                System.out.println("Nilai tidak valid (masukkan 0 - 100)");
-            }
-        }
-        return nilai;
-    }
-
     public static String NilaiHuruf(double nilai) {
         String huruf = "";
 
@@ -62,10 +45,10 @@ public class Operasi {
         return status;
     }
 
-    public static String StatusSemester(String status1, String status2, String status3, double nilai) {
+    public static String StatusSemester(String status1, String status2, double nilai) {
         String statusSemester = "";
 
-        if (status1.equals("LULUS") && status2.equals("LULUS") && status3.equals("LULUS")) {
+        if (status1.equals("LULUS") && status2.equals("LULUS")) {
 
             if (nilai >= 70) {
                 statusSemester = "LULUS";

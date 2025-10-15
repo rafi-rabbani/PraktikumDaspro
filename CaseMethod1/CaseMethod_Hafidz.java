@@ -11,22 +11,16 @@ public class CaseMethod_Hafidz {
         String nim = input.nextLine();
         
         System.out.println("\n--- Mata Kuliah 1: Algoritma dan Pemrograman ---");
-        System.out.print("Nilai UTS\t: ");
-        int uts1 = input.nextInt();
-        System.out.print("Nilai UAS\t: ");
-        int uas1 = input.nextInt();
-        System.out.print("Nilai Tugas\t: ");
-        int tugas1 = input.nextInt();
+        int uts1 = Operasi.ValidasiNilai("UTS", input);
+        int uas1 = Operasi.ValidasiNilai("UAS", input);
+        int tugas1 = Operasi.ValidasiNilai("Tugas", input);
         
         Double matkul1 = ((uts1*0.3) + (uas1*0.4) + (tugas1*0.3));
-
+        
         System.out.println("\n--- Mata Kuliah 2: Struktur Data ---");
-        System.out.print("Nilai UTS\t: ");
-        int uts2 = input.nextInt();
-        System.out.print("Nilai UAS\t: ");
-        int uas2 = input.nextInt();
-        System.out.print("Nilai Tugas\t: ");
-        int tugas2 = input.nextInt();
+        int uts2 = Operasi.ValidasiNilai("UTS", input);
+        int uas2 = Operasi.ValidasiNilai("UAS", input);
+        int tugas2 = Operasi.ValidasiNilai("Tugas", input);
         
         Double matkul2 = ((uts2*0.3) + (uas2*0.4) + (tugas2*0.3));
         

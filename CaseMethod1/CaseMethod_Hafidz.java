@@ -48,9 +48,9 @@ public class CaseMethod_Hafidz {
         
         System.out.println("\nMata Kuliah\t\t\t\t\tUTS\tUAS\tTugas\tNilai Akhir\tNilai Huruf\tStatus");
         System.out.println("--------------------------------------------------------------------------------------------------------------");
-        System.out.printf("Algoritma Pemrograman\t\t\t\t%d\t%d\t%d\t   %.2f\t    %s\t\t%s\n",uts1, uas1, tugas1, matkul1, Operasi.NilaiHuruf(matkul1), Operasi.Status(matkul1));
-        System.out.printf("Struktur Data\t\t\t\t\t%d\t%d\t%d\t   %.2f\t    %s\t\t%s\n", uts2, uas2, tugas2, matkul2, Operasi.NilaiHuruf(matkul2), Operasi.Status(matkul2));
-        System.out.printf("Matematika   \t\t\t\t\t%d\t%d\t%d\t   %.2f\t    %s\t\t%s\n", uts3, uas3, tugas3, matkul3, Operasi.NilaiHuruf(matkul3), Operasi.Status(matkul3));
+        System.out.printf("Algoritma Pemrograman\t\t\t\t%.1f\t%.1f\t%.1f\t   %.2f\t    %s\t\t%s\n",uts1, uas1, tugas1, matkul1, Operasi.NilaiHuruf(matkul1), Operasi.Status(matkul1));
+        System.out.printf("Struktur Data\t\t\t\t\t%.1f\t%.1f\t%.1f\t   %.2f\t    %s\t\t%s\n", uts2, uas2, tugas2, matkul2, Operasi.NilaiHuruf(matkul2), Operasi.Status(matkul2));
+        System.out.printf("Matematika   \t\t\t\t\t%.1f\t%.1f\t%.1f\t   %.2f\t    %s\t\t%s\n", uts3, uas3, tugas3, matkul3, Operasi.NilaiHuruf(matkul3), Operasi.Status(matkul3));
         
         System.out.printf("\nMata Kuliah dengan Rata-rata Terbesar\t: %s", Operasi.RatarataTerbesar(matkul1, "Algoritma Pemrograman", matkul2, "Struktur Data", matkul3, "Matematika"));
         System.out.printf("\nRata-rata Nilai Akhir\t: %.2f\n", ratarata);

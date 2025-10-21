@@ -45,10 +45,10 @@ public class Operasi {
         return status;
     }
 
-    public static String StatusSemester(String status1, String status2, double nilai) {
+    public static String StatusSemester(String status1, String status2, String status3, double nilai) {
         String statusSemester = "";
 
-        if (status1.equals("LULUS") && status2.equals("LULUS")) {
+        if (status1.equals("LULUS") && status2.equals("LULUS") && status3.equals("LULUS")) {
 
             if (nilai >= 70) {
                 statusSemester = "LULUS";
@@ -61,5 +61,19 @@ public class Operasi {
         }
 
         return statusSemester;
+    }
+
+    public static String RatarataTerbesar(double matkul1, String nama1, double matkul2, String nama2, double matkul3, String nama3) {
+        String terbesar = "";
+
+        if (matkul1 > matkul2 && matkul1 > matkul3) {
+            terbesar = nama1;
+        } else if (matkul2 > matkul3 && matkul2 > matkul1) {
+            terbesar = nama2;
+        } else if (matkul3 > matkul1 && matkul3 > matkul2) {
+            terbesar = nama3;
+        }
+
+        return terbesar;
     }
 }

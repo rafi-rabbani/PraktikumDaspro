@@ -1,4 +1,4 @@
-package CaseMethod1;
+package jobsheet6.CaseMethod1;
 
 public class Operasi {
     public static String NilaiHuruf(double nilai) {

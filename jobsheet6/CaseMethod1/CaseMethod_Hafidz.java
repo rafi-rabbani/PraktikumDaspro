@@ -1,4 +1,4 @@
-package CaseMethod1;
+package jobsheet6.CaseMethod1;
 import java.util.*;
 public class CaseMethod_Hafidz {
     public static void main(String[] args) {

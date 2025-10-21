@@ -20,6 +20,7 @@ public class SiakadWhile19 {
 
             if        (80 < nilai && nilai <= 100) {
                 System.out.println("Nilai mahasiswa ke-" + (i + 1) + " adalah A");
+                System.out.println("Bagus, pertahankan nilainya!");
                 
             } else if (73 < nilai && nilai <= 80) {
                 System.out.println("Nilai mahasiswa ke-" + (i + 1) + " adalah B+");

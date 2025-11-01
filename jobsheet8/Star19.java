@@ -13,5 +13,6 @@ public class Star19 {
             System.out.print("*");
             
         }
+        sc.close();
     }
 }

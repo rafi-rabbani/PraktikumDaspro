@@ -28,26 +28,57 @@ public class Kafe19 {
         System.out.println("Silahkan pilih menu yang Anda inginkan.");
     }
     
-    public static int hitungTotalHarga19(int pilihanMenu, int banyakItem) {
+    public static int[] hitungTotalHarga19(int pilihanMenu, int banyakItem, String kodePromo) {
         int[] hargaItems = {15000, 20000, 22000, 12000, 10000, 18000};
+        double diskon = 0;
+
+        if (kodePromo.equals("DISKON50")) {
+            diskon = 0.5;
+        } else if (kodePromo.equals("DISKON30")) {
+            diskon = 0.3;
+        } else {
+            diskon = 0;
+        }
 
         int hargaTotal = hargaItems[pilihanMenu - 1] * banyakItem;
-        return hargaTotal;
+        int hargaBayar = (int) (hargaTotal - (hargaTotal * diskon));
+
+        int[] value = {hargaTotal, hargaBayar};
+
+        return value;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Menu("Budi", true, "DISKON30");
+        int hargaTotal = 0;
+        int hargaBayar = 0;
 
-        System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
-        int pilihanMenu = sc.nextInt();
-        System.out.print("Masukkan jumlah item yang ingin dipesan: ");
-        int banyakItem = sc.nextInt();
+        String kodePromo = "DISKON30";
 
-        int totalHarga = hitungTotalHarga19(pilihanMenu, banyakItem);
+        Menu("Budi", true, kodePromo);
 
-        System.out.println("Total harga untuk pesanan Anda: Rp " + totalHarga);
+        while (true) {
+            System.out.print("\nMasukkan nomor menu yang ingin Anda pesan\t: ");
+            int pilihanMenu = sc.nextInt();
+            System.out.print("Masukkan jumlah item yang ingin dipesan\t\t: ");
+            int banyakItem = sc.nextInt();
+            sc.nextLine();
+            
+            int[] nota = hitungTotalHarga19(pilihanMenu, banyakItem, kodePromo);
+            hargaTotal += nota[0];
+            hargaBayar += nota[1];
+            
+            System.out.print("\nPesen lagi ga? (y/n): ");
+            String jawab = sc.nextLine();
+            if (jawab.equalsIgnoreCase("n")) {
+                break;
+            }
+        }
+
+        System.out.println("\nTotal harga\t\t: Rp " + hargaTotal);
+        System.out.println("Diskon\t\t\t: Rp " + (hargaTotal - hargaBayar));
+        System.out.println("Harga yang harus dibayar: Rp " + hargaBayar);
         sc.close();
     }
 }

@@ -96,6 +96,30 @@ public class Prestasi {
         
         System.out.println("\nData prestasi berhasil ditambahkan!");
     }
+
+    static void tampilData(String[][] prestasi, int jumlah) {
+        if (jumlah == 0) {
+            System.out.println("\nBelum ada data prestasi yang tersimpan");
+            return;
+        }
+
+        System.out.println("\n=====================================================================================================");
+        System.out.println("| No. |             NAMA             |      NIM      |    JENIS PRESTASI    |    TINGKAT    | TAHUN |");
+        System.out.println("=====================================================================================================");
+
+        int[] lebarKolom = {29, 14, 21, 14, 6};
+
+        for (int i = 0; i < jumlah; i++) {
+            System.out.print("|");
+            System.out.printf(" %-4s|", (i + 1)+".");
+
+            for (int j = 0; j < prestasi[i].length; j++) {
+                System.out.printf(" %-" + lebarKolom[j] + "s|", prestasi[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println("=====================================================================================================");
+    }
     public static void main(String[] args) {
         System.out.println("\n================= PENCATATAN PRESTASI MAHASISWA ================");
 

@@ -120,6 +120,36 @@ public class Prestasi {
         }
         System.out.println("=====================================================================================================");
     }
+
+    static void cariData() {
+        String[][] berdasarkanTahun = new String[jumlahPrestasi][5];
+        int jumlah = 0;
+
+        System.out.println("\n======== PENCARIAN PRESTASI MAHASISWA BERDASARKAN TAHUN ========");
+        
+        int tahun;
+        while (true) {
+            System.out.print("\nMasukkan Tahun Prestasi yang dicari (2015-2025): ");
+            tahun = input.nextInt();
+            input.nextLine();
+
+            if (tahun < 2015 || tahun > 2025) {
+                System.out.print("\nTahun tidak valid");
+            } else {
+                break;
+            }
+        }
+
+        for (int i = 0; i < jumlahPrestasi; i++) {
+            if (Integer.toString(tahun).equals(prestasi[i][4])) {
+                berdasarkanTahun[jumlah] = prestasi[i];
+                jumlah++;
+            }
+        }
+
+        System.out.printf("\nDaftar Prestasi Mahasiswa tahun %d:\n", tahun);
+        tampilData(berdasarkanTahun, jumlah);
+    }
     public static void main(String[] args) {
         System.out.println("\n================= PENCATATAN PRESTASI MAHASISWA ================");
 

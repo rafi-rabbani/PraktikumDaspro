@@ -28,6 +28,74 @@ public class Prestasi {
             }
             return pilihan;
     }
+
+    static void tambahData() {
+        if (jumlahPrestasi >= prestasi.length) {
+            System.out.println("Kapasitas penyimpanan data prestasi sudah penuh");
+            return;
+        }
+
+        System.out.print("\nMasukkan Nama Mahasiswa\t : ");
+        String nama = input.nextLine();
+        System.out.print("Masukkan NIM\t\t : ");
+        String nim = input.nextLine();
+        System.out.print("Masukkan Jenis Prestasi\t : ");
+        String jenis = input.nextLine();
+
+        System.out.print(
+            "\nTingkat Prestasi yang Tersedia: " +
+            "\n1. Lokal" +
+            "\n2. Nasional" +
+            "\n3. Internasional" +
+            "\nPilih Tingkat Prestasi (1/2/3): "
+        );
+        int pilih = input.nextInt();
+        input.nextLine();
+
+        while (pilih < 1 || pilih > 3) {
+            System.out.print("\nTingkat tidak valid\nPilih Tingkat Prestasi (1/2/3): ");
+            pilih = input.nextInt();
+            input.nextLine();
+        }
+
+        String tingkat;
+        switch (pilih) {
+            case 1:
+                tingkat = "Lokal";
+                break;
+            case 2:
+                tingkat = "Nasional";
+                break;
+            default:
+                tingkat = "Internasional";
+                break;
+        }
+
+        System.out.println("\nTingkat Prestasi yang Dipilih: " + tingkat);
+        
+        int tahun;
+        while (true) {
+            System.out.print("\nMasukkan Tahun Prestasi (2015-2025): ");
+            tahun = input.nextInt();
+            input.nextLine();
+
+            if (tahun < 2015 || tahun > 2025) {
+                System.out.print("\nTahun tidak valid");
+            } else {
+                break;
+            }
+        }
+
+        prestasi[jumlahPrestasi][0] = nama;
+        prestasi[jumlahPrestasi][1] = nim;
+        prestasi[jumlahPrestasi][2] = jenis;
+        prestasi[jumlahPrestasi][3] = tingkat;
+        prestasi[jumlahPrestasi][4] = Integer.toString(tahun);
+
+        jumlahPrestasi++;
+        
+        System.out.println("\nData prestasi berhasil ditambahkan!");
+    }
     public static void main(String[] args) {
         System.out.println("\n================= PENCATATAN PRESTASI MAHASISWA ================");
 

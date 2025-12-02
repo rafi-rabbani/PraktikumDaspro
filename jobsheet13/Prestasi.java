@@ -150,6 +150,31 @@ public class Prestasi {
         System.out.printf("\nDaftar Prestasi Mahasiswa tahun %d:\n", tahun);
         tampilData(berdasarkanTahun, jumlah);
     }
+
+    static void hitungPrestasi() {
+        int lokal = 0, nasional = 0, internasional = 0;
+
+        for (int i = 0; i < jumlahPrestasi; i++) {
+            switch (prestasi[i][3]) {
+                case "Lokal":
+                    lokal++;
+                    break;
+                case "Nasional":
+                    nasional++;
+                    break;
+                default:
+                    internasional++;
+                    break;
+            }
+        }
+        System.out.println(
+            "\nJumlah Prestasi Mahasiswa per Tingkat: " +
+            "\n1. Lokal\t: " + lokal +
+            "\n2. Nasional\t: " + nasional +
+            "\n3. Internasional: " + internasional
+        );
+    }
+
     public static void main(String[] args) {
         System.out.println("\n================= PENCATATAN PRESTASI MAHASISWA ================");
 
